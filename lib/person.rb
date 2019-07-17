@@ -19,11 +19,18 @@ class Person
     @happiness > 7
   end
   
-  def number_limits(number)
-    if number > 0 && @happiness < 10
-      return @happiness
-    end
+  def happiness_setting(number)
+    @happiness = number_limits(number)
     
+  end
+  
+  def number_limits(number)
+    if number < 0
+      number = 0
+    elsif number > 10
+      number = 10
+    end
+    number
   end
   
   def get_paid(salary)
@@ -39,9 +46,7 @@ class Person
   def work_out
     
     @happiness += 2
-    if !(@happiness > 0 && @happiness < 10)
-      @happiness = 10
-    end
+    happiness_setting(@happiness)
     
     @hygiene -= 3
     "♪ another one bites the dust ♫"
@@ -49,9 +54,7 @@ class Person
   
   def call_friend(friend)
     @happiness += 3
-    if !(@happiness > 0 && @happiness < 10)
-      @happiness = 10
-    end
+    happiness_setting(@happiness)
     friend.happiness += 3
     "Hi #{friend.name}! It's #{self.name}. How are you?"
   end
