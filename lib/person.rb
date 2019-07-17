@@ -1,9 +1,9 @@
 # your code goes here
 
 class Person
-  attr_reader :name, :happiness, :hygiene
-  attr_writer :happiness, :hygiene
-  attr_accessor :bank_account
+  attr_reader :name, :happiness
+  attr_writer :happy_limit 
+  attr_accessor :bank_account, :hygiene
   
   def initialize(name_arg)
     @name= name_arg
@@ -20,6 +20,13 @@ class Person
     @happiness > 7
   end
   
+  def happy_limit 
+    if @happiness > 0 && @happiness < 10
+      return @happiness
+    end
+    
+  end
+  
   def get_paid(salary)
     @bank_account += salary
     "all about the benjamins"
@@ -33,12 +40,19 @@ class Person
   def work_out
     
     @happiness += 2
+    if !(@happiness > 0 && @happiness < 10)
+      @happiness = 10
+    end
+    
     @hygiene -= 3
     "♪ another one bites the dust ♫"
   end
   
   def call_friend(friend)
     @happiness += 3
+    if !(@happiness > 0 && @happiness < 10)
+      @happiness = 10
+    end
     friend.happiness += 3
     "Hi #{friend.name}! It's #{self.name}. How are you?"
   end
@@ -60,8 +74,6 @@ class Person
     end
     
   end 
-  
-  
   
 end
 
