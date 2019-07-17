@@ -7,7 +7,7 @@ class Person
   def initialize(name_arg)
     @name= name_arg
     @bank_account= 25
-    @happiness= 8
+    @happiness=
     @hygiene= 8
   end
   
