@@ -2,7 +2,6 @@
 
 class Person
   attr_reader :name, :happiness
-  attr_writer :happy_limit 
   attr_accessor :bank_account, :hygiene
   
   def initialize(name_arg)
@@ -20,8 +19,8 @@ class Person
     @happiness > 7
   end
   
-  def happy_limit 
-    if @happiness > 0 && @happiness < 10
+  def number_limits(number)
+    if number > 0 && @happiness < 10
       return @happiness
     end
     
