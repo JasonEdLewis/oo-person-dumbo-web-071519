@@ -69,7 +69,7 @@ class Person
     if topic == "politics"
       person_arg.happiness -= 1
       @happiness -= 1
-      self.happiness(@happiness)
+      self.happiness=(@happiness)
       return "blah blah partisan blah lobbyist"
       
     elsif topic == "weather"
