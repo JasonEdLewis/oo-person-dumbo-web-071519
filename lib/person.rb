@@ -7,7 +7,7 @@ class Person
   def initialize(name_arg)
     @name= name_arg
     @bank_account= 25
-    @happiness=
+    @happiness= 8
     @hygiene= 8
   end
   
@@ -19,11 +19,11 @@ class Person
     @happiness > 7
   end
   
-  def happiness_setting(number)
+  def happiness=(number)
     @happiness = number_limits(number)
     
   end
-  def hygiene_setting(number)
+  def hygiene=(number)
     @hygiene = number_limits(number)
     
   end
@@ -44,7 +44,7 @@ class Person
   
   def take_bath
     @hygiene += 4
-    hygiene_setting(@hygiene)
+    hygiene=(@hygiene)
     "♪ Rub-a-dub just relaxing in the tub ♫"
   end
   
@@ -54,13 +54,13 @@ class Person
     happiness_setting(@happiness)
     
     @hygiene -= 3
-    hygiene_setting(@hygiene)
+    hygiene=(@hygiene)
     "♪ another one bites the dust ♫"
   end
   
   def call_friend(friend)
     @happiness += 3
-    happiness_setting(@happiness)
+    happiness=(@happiness)
     friend.happiness += 3
     "Hi #{friend.name}! It's #{self.name}. How are you?"
   end
