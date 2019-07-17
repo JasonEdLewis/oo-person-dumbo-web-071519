@@ -23,6 +23,10 @@ class Person
     @happiness = number_limits(number)
     
   end
+  def hygiene_setting(number)
+    @hygiene = number_limits(number)
+    
+  end
   
   def number_limits(number)
     if number < 0
@@ -40,6 +44,7 @@ class Person
   
   def take_bath
     @hygiene += 4
+    hygiene_setting(@hygiene)
     "♪ Rub-a-dub just relaxing in the tub ♫"
   end
   
@@ -49,6 +54,7 @@ class Person
     happiness_setting(@happiness)
     
     @hygiene -= 3
+    hygiene_setting(@hygiene)
     "♪ another one bites the dust ♫"
   end
   
