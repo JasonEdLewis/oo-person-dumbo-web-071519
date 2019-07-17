@@ -1,8 +1,8 @@
 # your code goes here
 
 class Person
-  attr_reader :name, :happiness
-  attr_accessor :bank_account, :hygiene
+  attr_reader :name, :happiness, :hygiene
+  attr_accessor :bank_account
   
   def initialize(name_arg)
     @name= name_arg
@@ -51,7 +51,7 @@ class Person
   def work_out
     
     @happiness += 2
-    happiness_setting(@happiness)
+    happiness=(@happiness)
     
     @hygiene -= 3
     hygiene=(@hygiene)
