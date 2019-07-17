@@ -44,7 +44,7 @@ class Person
   
   def take_bath
     @hygiene += 4
-    hygiene=(@hygiene)
+    self.hygiene=(@hygiene)
     "♪ Rub-a-dub just relaxing in the tub ♫"
   end
   
@@ -54,13 +54,13 @@ class Person
     self.happiness=(@happiness)
     
     @hygiene -= 3
-    hygiene=(@hygiene)
+    self.hygiene=(@hygiene)
     "♪ another one bites the dust ♫"
   end
   
   def call_friend(friend)
     @happiness += 3
-    happiness=(@happiness)
+    self.happiness=(@happiness)
     friend.happiness += 3
     "Hi #{friend.name}! It's #{self.name}. How are you?"
   end
